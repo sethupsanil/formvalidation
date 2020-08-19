@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
-// import custom validator to validate that password and confirm password fields match
 
 @Component({
   selector: 'app-root',
@@ -26,18 +25,18 @@ export class AppComponent {
 
   }
 
-  // convenience getter for easy access to form fields
+
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
     this.submitted = true;
 
-    // stop here if form is invalid
+
     if (this.registerForm.invalid) {
       return;
     }
 
-    // display form values on success
+
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
   }
 
@@ -66,7 +65,6 @@ export class AppComponent {
 export function ValidateName(control: AbstractControl) {
   const value = control.value.toLowerCase();
   if ('admin' == value) {
-    // console.log(control.value , value)
     return { validFname: true };
   }
   return null;
